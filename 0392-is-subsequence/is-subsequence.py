@@ -13,8 +13,8 @@ class Solution(object):
         for c in t:
             if c == s[s_pointer]:
                 s_pointer += 1
+                if (s_pointer == len(s)):
+                    break
 
-            if s_pointer == len(s):
-                return True
 
-        return False
+        return s_pointer == len(s)
