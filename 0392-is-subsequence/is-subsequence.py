@@ -5,16 +5,11 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        if len(s) == 0:
-            return True
+        t_pointer, s_pointer = 0, 0
 
-        s_pointer = 0
-
-        for c in t:
-            if c == s[s_pointer]:
+        while t_pointer < len(t) and s_pointer < len(s):
+             if t[t_pointer] == s[s_pointer]:
                 s_pointer += 1
-                if (s_pointer == len(s)):
-                    break
-
+             t_pointer += 1
 
         return s_pointer == len(s)
