@@ -10,13 +10,10 @@ class Solution(object):
 
         for num in nums:
             diff = k - num
-            if nums_dict.get(diff, 1) <= 0:
-                nums_dict[diff] += 1
+            if nums_dict.get(diff, 0) > 0:
                 operation_count += 1
+                nums_dict[diff] -= 1
             else:
-                if nums_dict.get(num) != None:
-                    nums_dict[num] -= 1
-                else:
-                    nums_dict[num] = 0
+                nums_dict[num] = nums_dict.get(num, 0) + 1
 
         return operation_count
